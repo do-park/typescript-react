@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Number from './Number';
 
 interface IState {
   counter: number;
@@ -11,7 +12,7 @@ class App extends Component<{}, IState> {
   };
   render() {
     const { counter } = this.state;
-    return <div>{counter} <button onClick={this.add}>Add</button></div>;
+    return <div><Number count={counter} /><button onClick={this.add}>Add</button></div>;
   }
   add = (): void => {
     this.setState(prev => {
